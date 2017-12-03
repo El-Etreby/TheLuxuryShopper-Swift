@@ -10,6 +10,7 @@ import UIKit
 import MessageKit
 import MapKit
 import Alamofire
+import AlamofireImage
 
 class ViewController: MessagesViewController {
 
@@ -87,11 +88,18 @@ extension ViewController: MessagesDataSource {
 
 // MARK: - MessagesDisplayDelegate
 
-extension ViewController: MessagesDisplayDelegate, TextMessageDisplayDelegate {}
+extension ViewController: MessagesDisplayDelegate, TextMessageDisplayDelegate {
+    //Adding bubble tail
+    func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
+        let corner: MessageStyle.TailCorner = isFromCurrentSender(message: message) ? .bottomRight : .bottomLeft
+        return .bubbleTail(corner, .pointedEdge)
+    }
+}
 
 // MARK: - MessagesLayoutDelegate
 
 extension ViewController: MessagesLayoutDelegate {
+    //Removing avatar by setting itts size to zero
     func avatarSize(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGSize {
         return .zero
     }
@@ -108,28 +116,48 @@ extension ViewController: MessageInputBarDelegate {
     
     func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
         messages.append(MockMessage(text: text, sender: currentSender(), messageId: UUID().uuidString, date: Date()))
+        inputBar.inputTextView.text = String()
+        messagesCollectionView.reloadData()
         messagesCollectionView.scrollToBottom()
         
-        //Sending reply
+        //Setting up headers and parameters
         let headers: HTTPHeaders = [
             "Authorization" : self.uuid,
             "Accept": "application/json"
         ]
         let parameters = ["message" : text]
+        
+        //Sending reply
         Alamofire.request("https://theluxuryshopper.herokuapp.com/chat", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
             if let json = response.result.value as? [String: AnyObject] {
-                if let response = json["message"] as? String {
-                    //let modifiedResponse: String = response.replacingOccurrences(of: "<br>", with: "\n")
+                if let items = json["items"] as? [[String: String]] {
+                    var responseString: String = ""
+                    var itemsArray: [String: UIImage] = [:]
+                    for (index,item) in items.enumerated() {
+                        var imageURL: String = item["GalleryURL"]!
+                        var modifiedImageURL: String = imageURL.replacingOccurrences(of:"http", with:"https")
+                        Alamofire.request(modifiedImageURL).responseImage { responseImage in
+                            if let image = responseImage.result.value {
+                                responseString = "Title: " + item["Title"]! + "\nCondition: " + item["Condition"]! + "\nPrice: " + item["Price"]! + " " + item["Currency"]! + "\nItem URL: " + item["ItemURL"]!.replacingOccurrences(of:"http", with:"https") + "\n"
+                                self.messages.append(MockMessage(text: responseString, sender: self.api, messageId: UUID().uuidString, date: Date()))
+                                self.messages.append(MockMessage(image: image, sender: self.api, messageId: UUID().uuidString, date: Date()))
+                                self.messagesCollectionView.reloadData()
+                                self.messagesCollectionView.scrollToBottom()
+                            }
+                        }
+                        
+                    }
+                    self.messages.append(MockMessage(text: "What else would you like to search for?", sender: self.api, messageId: UUID().uuidString, date: Date()))
+                    self.messagesCollectionView.reloadData()
+                    self.messagesCollectionView.scrollToBottom()
+                    
+                } else if let response = json["message"] as? String {
                     self.messages.append(MockMessage(text: response, sender: self.api, messageId: UUID().uuidString, date: Date()))
                     self.messagesCollectionView.reloadData()
                     self.messagesCollectionView.scrollToBottom()
                 }
             }            
         }
-        
-        inputBar.inputTextView.text = String()
-        messagesCollectionView.reloadData()
-        messagesCollectionView.scrollToBottom()
     }
     
 }
