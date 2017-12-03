@@ -7,23 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		032A83251FD33E1600B87B42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 032A83221FD33E1500B87B42 /* Assets.xcassets */; };
 		033ABEB01FD1A63300C96AC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033ABEAF1FD1A63300C96AC1 /* AppDelegate.swift */; };
 		033ABEB21FD1A63300C96AC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033ABEB11FD1A63300C96AC1 /* ViewController.swift */; };
 		033ABEB51FD1A63300C96AC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033ABEB31FD1A63300C96AC1 /* Main.storyboard */; };
 		033ABEB81FD1A63300C96AC1 /* TheLuxuryShopper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 033ABEB61FD1A63300C96AC1 /* TheLuxuryShopper.xcdatamodeld */; };
-		033ABEBA1FD1A63300C96AC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 033ABEB91FD1A63300C96AC1 /* Assets.xcassets */; };
 		033ABEBD1FD1A63300C96AC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033ABEBB1FD1A63300C96AC1 /* LaunchScreen.storyboard */; };
+		034B492E1FD256AE004FBCCA /* MockMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034B492D1FD256AD004FBCCA /* MockMessage.swift */; };
+		034B49301FD256C3004FBCCA /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034B492F1FD256C3004FBCCA /* SampleData.swift */; };
+		1641F578E2719C9D2DEF04AD /* Pods_TheLuxuryShopper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A38EFCCF856B12A15275341 /* Pods_TheLuxuryShopper.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		032A83221FD33E1500B87B42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../Desktop/MessageKit-master/Example/Sources/Assets.xcassets"; sourceTree = "<group>"; };
 		033ABEAC1FD1A63300C96AC1 /* TheLuxuryShopper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheLuxuryShopper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		033ABEAF1FD1A63300C96AC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		033ABEB11FD1A63300C96AC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		033ABEB41FD1A63300C96AC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		033ABEB71FD1A63300C96AC1 /* TheLuxuryShopper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TheLuxuryShopper.xcdatamodel; sourceTree = "<group>"; };
-		033ABEB91FD1A63300C96AC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		033ABEBC1FD1A63300C96AC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		033ABEBE1FD1A63300C96AC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		034B492D1FD256AD004FBCCA /* MockMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockMessage.swift; path = "../../../../Desktop/MessageKit-master/Example/Sources/MockMessage.swift"; sourceTree = "<group>"; };
+		034B492F1FD256C3004FBCCA /* SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SampleData.swift; path = "../../../../Desktop/MessageKit-master/Example/Sources/SampleData.swift"; sourceTree = "<group>"; };
+		70BC171C4A06E1A5BE3B7309 /* Pods-TheLuxuryShopper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheLuxuryShopper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheLuxuryShopper/Pods-TheLuxuryShopper.debug.xcconfig"; sourceTree = "<group>"; };
+		7A38EFCCF856B12A15275341 /* Pods_TheLuxuryShopper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheLuxuryShopper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3CD0BD05B8E276D17A45E2F /* Pods-TheLuxuryShopper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheLuxuryShopper.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheLuxuryShopper/Pods-TheLuxuryShopper.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1641F578E2719C9D2DEF04AD /* Pods_TheLuxuryShopper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +51,8 @@
 			children = (
 				033ABEAE1FD1A63300C96AC1 /* TheLuxuryShopper */,
 				033ABEAD1FD1A63300C96AC1 /* Products */,
+				75617EF585AF52180D910604 /* Pods */,
+				E656598F45A7F9C0A8ACBDB7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +67,34 @@
 		033ABEAE1FD1A63300C96AC1 /* TheLuxuryShopper */ = {
 			isa = PBXGroup;
 			children = (
+				032A83221FD33E1500B87B42 /* Assets.xcassets */,
+				034B492F1FD256C3004FBCCA /* SampleData.swift */,
+				034B492D1FD256AD004FBCCA /* MockMessage.swift */,
 				033ABEAF1FD1A63300C96AC1 /* AppDelegate.swift */,
 				033ABEB11FD1A63300C96AC1 /* ViewController.swift */,
 				033ABEB31FD1A63300C96AC1 /* Main.storyboard */,
-				033ABEB91FD1A63300C96AC1 /* Assets.xcassets */,
 				033ABEBB1FD1A63300C96AC1 /* LaunchScreen.storyboard */,
 				033ABEBE1FD1A63300C96AC1 /* Info.plist */,
 				033ABEB61FD1A63300C96AC1 /* TheLuxuryShopper.xcdatamodeld */,
 			);
 			path = TheLuxuryShopper;
+			sourceTree = "<group>";
+		};
+		75617EF585AF52180D910604 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				70BC171C4A06E1A5BE3B7309 /* Pods-TheLuxuryShopper.debug.xcconfig */,
+				B3CD0BD05B8E276D17A45E2F /* Pods-TheLuxuryShopper.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E656598F45A7F9C0A8ACBDB7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7A38EFCCF856B12A15275341 /* Pods_TheLuxuryShopper.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +104,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 033ABEC11FD1A63300C96AC1 /* Build configuration list for PBXNativeTarget "TheLuxuryShopper" */;
 			buildPhases = (
+				E4A6BBB1E74CBE67C54051A1 /* [CP] Check Pods Manifest.lock */,
 				033ABEA81FD1A63300C96AC1 /* Sources */,
 				033ABEA91FD1A63300C96AC1 /* Frameworks */,
 				033ABEAA1FD1A63300C96AC1 /* Resources */,
+				E514DC231DB9BF0E4D7F779C /* [CP] Embed Pods Frameworks */,
+				646E8474BDC86A6695C5718D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -99,6 +132,7 @@
 				TargetAttributes = {
 					033ABEAB1FD1A63300C96AC1 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -127,12 +161,68 @@
 			buildActionMask = 2147483647;
 			files = (
 				033ABEBD1FD1A63300C96AC1 /* LaunchScreen.storyboard in Resources */,
-				033ABEBA1FD1A63300C96AC1 /* Assets.xcassets in Resources */,
+				032A83251FD33E1600B87B42 /* Assets.xcassets in Resources */,
 				033ABEB51FD1A63300C96AC1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		646E8474BDC86A6695C5718D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TheLuxuryShopper/Pods-TheLuxuryShopper-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4A6BBB1E74CBE67C54051A1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TheLuxuryShopper-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E514DC231DB9BF0E4D7F779C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TheLuxuryShopper/Pods-TheLuxuryShopper-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/MessageKit/MessageKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TheLuxuryShopper/Pods-TheLuxuryShopper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		033ABEA81FD1A63300C96AC1 /* Sources */ = {
@@ -142,6 +232,8 @@
 				033ABEB81FD1A63300C96AC1 /* TheLuxuryShopper.xcdatamodeld in Sources */,
 				033ABEB21FD1A63300C96AC1 /* ViewController.swift in Sources */,
 				033ABEB01FD1A63300C96AC1 /* AppDelegate.swift in Sources */,
+				034B49301FD256C3004FBCCA /* SampleData.swift in Sources */,
+				034B492E1FD256AE004FBCCA /* MockMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +305,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -254,31 +347,34 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		033ABEC21FD1A63300C96AC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70BC171C4A06E1A5BE3B7309 /* Pods-TheLuxuryShopper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TheLuxuryShopper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Etro.TheLuxuryShopper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
 		033ABEC31FD1A63300C96AC1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3CD0BD05B8E276D17A45E2F /* Pods-TheLuxuryShopper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TheLuxuryShopper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Etro.TheLuxuryShopper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -301,6 +397,7 @@
 				033ABEC31FD1A63300C96AC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
