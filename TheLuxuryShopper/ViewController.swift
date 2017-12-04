@@ -27,6 +27,30 @@ class ViewController: MessagesViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let items = [
+            makeButton(named: "ic_hashtag").onSelected { _ in
+                self.messages.append(MockMessage(text: "Done", sender: self.currentSender(), messageId: UUID().uuidString, date: Date()))
+                self.messagesCollectionView.reloadData()
+                self.messagesCollectionView.scrollToBottom()
+                //Setting up headers and parameters
+                let headers: HTTPHeaders = [
+                    "Authorization" : self.uuid,
+                    "Accept": "application/json"
+                ]
+                let parameters = ["message" : "Done"]
+                
+            Alamofire.request("https://theluxuryshopper.herokuapp.com/chat", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+                    if let json = response.result.value as? [String: String] {
+                        self.messages.append(MockMessage(text: json["message"]!, sender: self.api, messageId: UUID().uuidString, date: Date()))
+                        self.messagesCollectionView.reloadData()
+                        self.messagesCollectionView.scrollToBottom()
+                    }
+                    
+                }
+            }
+        ]
+        messageInputBar.setLeftStackViewWidthConstant(to: 36, animated: false)
+        messageInputBar.setStackViewItems(items, forStack: .left, animated: false)
         // Do any additional setup after loading the view, typically from a nib.
         Alamofire.request("https://theluxuryshopper.herokuapp.com/welcome").responseJSON { response in
             if let json = response.result.value as? [String: AnyObject]{
@@ -46,13 +70,39 @@ class ViewController: MessagesViewController {
         messageInputBar.delegate = self
         scrollsToBottomOnFirstLayout = true //default false
         scrollsToBottomOnKeybordBeginsEditing = true // default false
-        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: - Helpers
+    
+    func makeButton(named: String) -> InputBarButtonItem {
+        return InputBarButtonItem()
+            .configure {
+                $0.spacing = .fixed(10)
+                $0.image = UIImage(named: named)?.withRenderingMode(.alwaysTemplate)
+                $0.setSize(CGSize(width: 30, height: 30), animated: true)
+                $0.tintColor.setFill()
+            }.onSelected {
+                $0.spacing = .fixed(10)
+                $0.image = UIImage(named: named)?.withRenderingMode(.alwaysTemplate)
+                $0.setSize(CGSize(width: 30, height: 30), animated: true)
+            }.onDeselected {
+                $0.spacing = .fixed(10)
+                $0.image = UIImage(named: named)?.withRenderingMode(.alwaysTemplate)
+                $0.setSize(CGSize(width: 30, height: 30), animated: true)
+            }.onTouchUpInside {
+                $0.spacing = .fixed(10)
+                $0.image = UIImage(named: named)?.withRenderingMode(.alwaysTemplate)
+                $0.setSize(CGSize(width: 30, height: 30), animated: true)
+                print("Item Tapped")
+        }
+    }
+    
+    
 
 }
 
@@ -94,6 +144,8 @@ extension ViewController: MessagesDisplayDelegate, TextMessageDisplayDelegate {
         let corner: MessageStyle.TailCorner = isFromCurrentSender(message: message) ? .bottomRight : .bottomLeft
         return .bubbleTail(corner, .pointedEdge)
     }
+    
+    
 }
 
 // MARK: - MessagesLayoutDelegate
@@ -159,5 +211,4 @@ extension ViewController: MessageInputBarDelegate {
             }            
         }
     }
-    
 }
