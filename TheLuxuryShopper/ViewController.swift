@@ -47,6 +47,7 @@ class ViewController: MessagesViewController {
                     Alamofire.request("https://theluxuryshopper.herokuapp.com/chat", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
                         if let json = response.result.value as? [String: String] {
                             self.messages.append(MockMessage(text: json["message"]!, sender: self.api, messageId: UUID().uuidString, date: Date()))
+                            self.lastMessage = json["message"]!
                             self.messagesCollectionView.reloadData()
                             self.messagesCollectionView.scrollToBottom()
                         }
@@ -62,7 +63,7 @@ class ViewController: MessagesViewController {
                 let arrayConditions=["New","Used","None"] as [String]
                 let arrayMinPrices=["none","100","200","300"] as [String]
                 let arrayMaxPrices=["400","500","600"] as [String]
-                if (self.lastMessage).isEqual("Welcome to The Luxury Shopper.\nWhat are you looking for? say something like 'Gucci Tshirt' ") || (self.lastMessage).isEqual("What else would you like to search for?"){
+                if (self.lastMessage).isEqual("Welcome to The Luxury Shopper.\nWhat are you looking for? say something like 'Gucci Tshirt' ") || (self.lastMessage).hasSuffix("What else would you like to search for? ") || (self.lastMessage).hasSuffix("What else would you like to search for?") || (self.lastMessage).hasSuffix("What are you looking for? say something like 'Gucci Tshirt'"){
                     let index = Int(arc4random_uniform(UInt32(arrayItems.count)))
                     reply = arrayItems[index]
                 }
@@ -100,7 +101,7 @@ class ViewController: MessagesViewController {
                                         var modifiedImageURL: String = imageURL.replacingOccurrences(of:"http", with:"https")
                                         Alamofire.request(modifiedImageURL).responseImage { responseImage in
                                             if let image = responseImage.result.value {
-                                                responseString = "Title: " + item["Title"]! + "\nCondition: " + item["Condition"]! + "\nPrice: " + item["Price"]! + " " + item["Currency"]! + "\nItem URL: " + item["ItemURL"]!.replacingOccurrences(of:"http", with:"https") + "\n"
+                                                responseString = "Title: " + item["Title"]! + "\nCondition: " + item["Condition"]! + "\nPrice: " + item["Price"]! + " " + item["Currency"]! + "\nItem URL: " + item["ItemURL"]!.replacingOccurrences(of:"http", with:"https")+"\n"
                                                 self.messages.append(MockMessage(text: responseString, sender: self.api, messageId: UUID().uuidString, date: Date()))
                                                 self.messages.append(MockMessage(image: image, sender: self.api, messageId: UUID().uuidString, date: Date()))
                                                 self.lastMessage = responseString
@@ -187,8 +188,6 @@ class ViewController: MessagesViewController {
                 print("Item Tapped")
         }
     }
-    
-    
 }
 
 extension ViewController: MessagesDataSource {
