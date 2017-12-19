@@ -7,18 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		032A83251FD33E1600B87B42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 032A83221FD33E1500B87B42 /* Assets.xcassets */; };
 		033ABEB01FD1A63300C96AC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033ABEAF1FD1A63300C96AC1 /* AppDelegate.swift */; };
 		033ABEB21FD1A63300C96AC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033ABEB11FD1A63300C96AC1 /* ViewController.swift */; };
 		033ABEB51FD1A63300C96AC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033ABEB31FD1A63300C96AC1 /* Main.storyboard */; };
 		033ABEB81FD1A63300C96AC1 /* TheLuxuryShopper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 033ABEB61FD1A63300C96AC1 /* TheLuxuryShopper.xcdatamodeld */; };
 		033ABEBD1FD1A63300C96AC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033ABEBB1FD1A63300C96AC1 /* LaunchScreen.storyboard */; };
-		034558521FD782DB005C0BEF /* MockMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034558511FD782DB005C0BEF /* MockMessage.swift */; };
+		03E303871FE8F1A900A40B40 /* MockMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E303861FE8F1A900A40B40 /* MockMessage.swift */; };
+		03E303891FE8F1B700A40B40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03E303881FE8F1B700A40B40 /* Assets.xcassets */; };
 		1641F578E2719C9D2DEF04AD /* Pods_TheLuxuryShopper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A38EFCCF856B12A15275341 /* Pods_TheLuxuryShopper.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		032A83221FD33E1500B87B42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../Desktop/MessageKit-master/Example/Sources/Assets.xcassets"; sourceTree = "<group>"; };
 		033ABEAC1FD1A63300C96AC1 /* TheLuxuryShopper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheLuxuryShopper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		033ABEAF1FD1A63300C96AC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		033ABEB11FD1A63300C96AC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,7 +25,8 @@
 		033ABEB71FD1A63300C96AC1 /* TheLuxuryShopper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TheLuxuryShopper.xcdatamodel; sourceTree = "<group>"; };
 		033ABEBC1FD1A63300C96AC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		033ABEBE1FD1A63300C96AC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		034558511FD782DB005C0BEF /* MockMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockMessage.swift; path = "../../../../Desktop/MessageKit-master/Example/Sources/MockMessage.swift"; sourceTree = "<group>"; };
+		03E303861FE8F1A900A40B40 /* MockMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockMessage.swift; sourceTree = "<group>"; };
+		03E303881FE8F1B700A40B40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70BC171C4A06E1A5BE3B7309 /* Pods-TheLuxuryShopper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheLuxuryShopper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheLuxuryShopper/Pods-TheLuxuryShopper.debug.xcconfig"; sourceTree = "<group>"; };
 		7A38EFCCF856B12A15275341 /* Pods_TheLuxuryShopper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheLuxuryShopper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3CD0BD05B8E276D17A45E2F /* Pods-TheLuxuryShopper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheLuxuryShopper.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheLuxuryShopper/Pods-TheLuxuryShopper.release.xcconfig"; sourceTree = "<group>"; };
@@ -65,8 +65,8 @@
 		033ABEAE1FD1A63300C96AC1 /* TheLuxuryShopper */ = {
 			isa = PBXGroup;
 			children = (
-				032A83221FD33E1500B87B42 /* Assets.xcassets */,
-				034558511FD782DB005C0BEF /* MockMessage.swift */,
+				03E303881FE8F1B700A40B40 /* Assets.xcassets */,
+				03E303861FE8F1A900A40B40 /* MockMessage.swift */,
 				033ABEAF1FD1A63300C96AC1 /* AppDelegate.swift */,
 				033ABEB11FD1A63300C96AC1 /* ViewController.swift */,
 				033ABEB31FD1A63300C96AC1 /* Main.storyboard */,
@@ -159,7 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				033ABEBD1FD1A63300C96AC1 /* LaunchScreen.storyboard in Resources */,
-				032A83251FD33E1600B87B42 /* Assets.xcassets in Resources */,
+				03E303891FE8F1B700A40B40 /* Assets.xcassets in Resources */,
 				033ABEB51FD1A63300C96AC1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,7 +232,7 @@
 				033ABEB81FD1A63300C96AC1 /* TheLuxuryShopper.xcdatamodeld in Sources */,
 				033ABEB21FD1A63300C96AC1 /* ViewController.swift in Sources */,
 				033ABEB01FD1A63300C96AC1 /* AppDelegate.swift in Sources */,
-				034558521FD782DB005C0BEF /* MockMessage.swift in Sources */,
+				03E303871FE8F1A900A40B40 /* MockMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
